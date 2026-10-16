@@ -8,10 +8,7 @@
   <link rel="canonical" href="https://bai.xin/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
-    :root {
-      --ink: #3d2c28;
-      --paper: #fffaf6;
-    }
+    :root { --ink: #3a2a26; }
     * { box-sizing: border-box; }
     body {
       margin: 0;
@@ -19,59 +16,112 @@
       color: var(--ink);
       font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
       background:
-        radial-gradient(circle at 8% 12%, #ffd7c2 0 140px, transparent 142px),
-        radial-gradient(circle at 92% 8%, #c8f3ea 0 120px, transparent 122px),
-        radial-gradient(circle at 86% 92%, #ffe7a3 0 130px, transparent 132px),
-        linear-gradient(165deg, #fff8f3, #f4fbff 70%);
+        radial-gradient(circle at 0 0, #ffd8c4 0 180px, transparent 181px),
+        radial-gradient(circle at 100% 0, #c9f6ee 0 160px, transparent 161px),
+        radial-gradient(circle at 100% 100%, #ffe7a8 0 200px, transparent 201px),
+        linear-gradient(180deg, #fff8f4, #f3f9ff);
     }
     main {
-      width: min(34rem, calc(100% - 2rem));
+      width: min(40rem, calc(100% - 2rem));
       margin: 0 auto;
-      padding: 14vh 0 4rem;
+      padding: 10vh 0 4.5rem;
     }
     h1 {
-      margin: 0 0 1.1rem;
-      font-size: clamp(2.1rem, 7vw, 3.1rem);
-      line-height: 1.15;
+      margin: 0;
+      font-size: clamp(2.6rem, 8vw, 3.6rem);
+      line-height: 1.05;
       font-weight: 800;
     }
-    p {
-      margin: 0 0 .85rem;
-      font-size: 1.25rem;
-      line-height: 1.75;
+    .who { margin: .7rem 0 1.4rem; font-size: 1.35rem; }
+    .likes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .75rem;
+      margin: 0 0 1.3rem;
+      padding: 0;
+      list-style: none;
     }
-    .sing { color: #e25b4a; font-weight: 700; }
-    .dance { color: #d18a00; font-weight: 700; }
-    .sport { color: #0f9d86; font-weight: 700; }
+    .likes li {
+      margin: 0;
+      padding: 1rem .6rem .9rem;
+      border-radius: 1.2rem;
+      text-align: center;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(80, 40, 20, .07);
+    }
+    .likes strong { display: block; margin-top: .35rem; font-size: 1.15rem; }
+    .likes svg { width: 2.4rem; height: 2.4rem; }
+    .sing { color: #e25b4a; }
+    .dance { color: #d48900; }
+    .sport { color: #0e9a84; }
+    .note {
+      margin: 0 0 .7rem;
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+    .trip {
+      margin: 1.1rem 0 1.5rem;
+      padding: 1rem 1.1rem .95rem;
+      border-radius: 1.2rem;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(80, 40, 20, .07);
+    }
+    .trip p { margin: .35rem 0 0; font-size: 1.15rem; line-height: 1.7; }
+    .path { display: block; width: 100%; height: 36px; }
     .dad {
       display: inline-block;
-      margin-top: 1.1rem;
-      padding: .75rem 1rem;
-      background: var(--paper);
+      padding: .8rem 1.05rem;
+      background: #fff;
       border-radius: 1rem;
-      box-shadow: 0 10px 28px rgba(90, 40, 20, .08);
+      box-shadow: 0 10px 24px rgba(80, 40, 20, .08);
       text-decoration: none;
       color: inherit;
+      font-size: 1.15rem;
     }
     .dad:hover { color: #e25b4a; }
-    .dad small {
-      display: block;
-      margin-top: .15rem;
-      color: #8a6a60;
-      font-size: .95rem;
+    .dad small { display: block; margin-top: .15rem; color: #8a6a60; font-size: .95rem; }
+    @media (max-width: 560px) {
+      .likes { gap: .5rem; }
+      .likes li { padding: .8rem .3rem .7rem; }
+      .likes strong { font-size: 1rem; }
     }
-    .after { margin-top: 1.4rem; }
+    @media (prefers-reduced-motion: no-preference) {
+      .likes li { transition: transform .2s ease; }
+      .likes li:hover { transform: translateY(-4px); }
+    }
   </style>
 </head>
 <body>
   <main>
     <h1>你好：）</h1>
-    <p>我还是个小孩子，</p>
-    <p>我喜欢<span class="sing">唱歌</span>、<span class="dance">跳舞</span>和<span class="sport">运动</span>。</p>
-    <p>学习成绩还不错，是大队委哦。</p>
+    <p class="who">我还是个小孩子，<br>我喜欢唱歌、跳舞和运动。</p>
+    <ul class="likes">
+      <li class="sing">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M18 8h4v20.2A8 8 0 1 1 18 28V8zm4 0 16-4v18.2A8 8 0 1 1 34 22V8.2L22 11V8z"/></svg>
+        <strong>唱歌</strong>
+      </li>
+      <li class="dance">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="30" cy="9" r="4" fill="currentColor"/><path fill="currentColor" d="M28 15c-6 1-10 6-10 12v5h5v-4c0-3 2-6 5-7l4 8 6-3-5-10c-1.6-3-3-4-5-4zM16 36c2 4 8 6 14 4l-2-5c-3 1-7 0-8-2l-4 3z"/></svg>
+        <strong>跳舞</strong>
+      </li>
+      <li class="sport">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="14" fill="none" stroke="currentColor" stroke-width="3"/><path fill="none" stroke="currentColor" stroke-width="3" d="M24 10c4 4 6 9 6 14s-2 10-6 14c-4-4-6-9-6-14s2-10 6-14zM12 20h24M13 28h22"/></svg>
+        <strong>运动</strong>
+      </li>
+    </ul>
+    <p class="note">学习成绩还不错，是大队委哦。</p>
+    <p class="note">期待着长大，也会留恋美好的童年。</p>
+    <div class="trip">
+      <svg class="path" viewBox="0 0 320 36" aria-hidden="true">
+        <path d="M8 26 C 50 26, 50 8, 90 8 S 140 28, 180 20 240 6, 312 14" fill="none" stroke="#7eb6ff" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 10"/>
+        <circle cx="8" cy="26" r="5" fill="#ff7a59"/>
+        <circle cx="90" cy="8" r="5" fill="#ffc857"/>
+        <circle cx="180" cy="20" r="5" fill="#3dbea5"/>
+        <circle cx="312" cy="14" r="5" fill="#6eb5ff"/>
+      </svg>
+      <p>我去过很多好玩的地方了，希望将来能够周游世界。</p>
+    </div>
     <a class="dad" href="https://gong.cm">这是我爸爸的主页<small>gong.cm</small></a>
-    <p class="after">期待着长大，也会留恋美好的童年。</p>
-    <p>我去过很多好玩的地方了，希望将来能够周游世界。</p>
   </main>
 </body>
 </html>
